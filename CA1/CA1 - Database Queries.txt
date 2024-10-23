@@ -1,1 +1,10 @@
-g
+// Storage Procedures
+
+delimiter //
+
+create procedure GetGCustomers()
+begin
+  select * from customers;
+end //
+
+delimiter ;
