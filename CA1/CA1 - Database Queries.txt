@@ -8,3 +8,32 @@ begin
 end //
 
 delimiter ;
+
+// DATABASE ADMINISTRATION \\
+
+// Create Users using CREATE USER //
+
+CREATE USER 'user1'@'%' IDENTIFIED BY 'password1';
+
+CREATE USER 'user2'@'%' IDENTIFIED BY 'password2';
+
+
+// Grant Privileges using GRANT \\
+
+GRANT SELECT, INSERT ON paper_company.orders TO 'user1'@'%';
+
+GRANT ALL PRIVILEGES ON paper_company.products TO 'user2'@'%';
+
+
+// Revoke Privileges using REVOKE \\
+
+REVOKE INSERT ON paper_company.orders FROM 'user1'@'%';
+
+REVOKE ALL PRIVILEGES ON paper_company.products FROM 'user2'@'%';
+
+
+// Verify Privileges using SHOW GRANTS \\
+
+SHOW GRANTS FOR 'user1'@'%';
+
+SHOW GRANTS FOR 'user2'@'%';
